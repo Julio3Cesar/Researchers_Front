@@ -40,7 +40,7 @@ export const NB_CORE_PROVIDERS = [
         token: {
           class: NbAuthJWTToken,
           key: 'Authorization',
-        }
+        },
       }),
     ],
     forms: {

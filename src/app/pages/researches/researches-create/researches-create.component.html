@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Research Title</nb-card-header>
+      <nb-card-body>
+        <input type="text" [(ngModel)]="research.title" (ngModelChange)="onChangeQuestion()" id="research-title" class="form-control full-width" placeholder="Title">
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let question of research.questions;index as i;trackBy:trackByFn">
+    <nb-card>
+      <nb-card-header>Question</nb-card-header>
+      <nb-card-body>
+        <div class="input-group mail-btn-group">
+          <input type="text"[(ngModel)]="research.questions[i].question" (ngModelChange)="onChangeQuestion()" class="form-control" placeholder="Question">
+          <span class="input-group-append">
+            <button class="btn btn-secondary input-group-text" disabled>
+              ?
+            </button>
+          </span>
+        </div>
+        <div id="alternatives">
+          <div *ngFor="let alternative of question.alternatives;index as j;trackBy:trackByFn">
+            <div class="input-group">
+              <input type="text" [(ngModel)]="question.alternatives[j]" (ngModelChange)="onChange(i)" class="form-control" placeholder="Alternative">
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="createResearch()" [disabled]="researchIsValid">Criar Pesquisa</button>
+  </div>
+</div>

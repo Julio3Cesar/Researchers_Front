@@ -1,6 +1,8 @@
+import { Alternative } from './alternative';
+
 export class Question {
   question: String = "";
-  alternatives: Array<String> = ["", ""];
+  alternatives: Array<Alternative> = [new Alternative(), new Alternative()];
 
   isInvalid(): boolean {
     if(this.question != ""){
@@ -9,7 +11,7 @@ export class Question {
       }
     } else {
       let isEmpty = this.alternatives.filter(function(alternative){
-        if(alternative == "") { return "vazio"; }
+        if(alternative.alternative == "") { return "vazio"; }
       });
 
       if(this.alternatives.length != isEmpty.length) {
@@ -22,7 +24,7 @@ export class Question {
 
   notPermitNextAlternative(){
     let notEmpty = this.alternatives.filter(function(alternative){
-      if(alternative != "") { return alternative; }
+      if(alternative.alternative != "") { return alternative; }
     });
 
     return notEmpty.length < 2;

@@ -25,7 +25,7 @@
         <div id="alternatives">
           <div *ngFor="let alternative of question.alternatives;index as j;trackBy:trackByFn">
             <div class="input-group">
-              <input type="text" [(ngModel)]="question.alternatives[j]" (ngModelChange)="onChange(i)" class="form-control" placeholder="Alternative">
+              <input type="text" [(ngModel)]="question.alternatives[j].alternative" (ngModelChange)="onChange(i)" class="form-control" placeholder="Alternative">
             </div>
           </div>
         </div>

@@ -13,6 +13,23 @@ export class ResearchService {
   constructor(private http: HttpClient) { }
 
   create(research: Research): Observable<Research> {
-    return this.http.post<Research>(this.host+"research", research);
+    research = this.cleanResearch(research);
+    console.log(research);
+    return this.http.post<Research>(this.host+"researches", research);
+  }
+
+  cleanResearch(research: Research){
+    let questions = research.questions.filter(function(question){
+      if(question.question != "") {
+        let alternatives = question.alternatives.filter(function(alternative){
+          if(alternative.alternative != "") { return alternative; }
+        });
+        question.alternatives = alternatives;
+        return question;
+      }
+    });
+
+    research.questions = questions;
+    return research;
   }
 }

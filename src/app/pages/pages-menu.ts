@@ -6,8 +6,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-compose',
     children: [
       {
+        title: 'Show',
+        link: 'researches/show',
+      },
+      {
         title: 'Create',
-        link: '/research/create',
+        link: 'researches/create',
         home: true,
       },
     ]

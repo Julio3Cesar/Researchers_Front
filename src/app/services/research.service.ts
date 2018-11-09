@@ -18,7 +18,15 @@ export class ResearchService {
     return this.http.post<Research>(this.host+"researches", research);
   }
 
-  cleanResearch(research: Research){
+  show(researcherId = 0): Observable<Array<Research>> {
+    return this.http.get<Array<Research>>(this.host+"researches/index/" + researcherId);
+  }
+
+  getReply(id: number){
+    return this.http.get<Research>(this.host+"researches/" + id);
+  }
+
+  private cleanResearch(research: Research){
     let questions = research.questions.filter(function(question){
       if(question.question != "") {
         let alternatives = question.alternatives.filter(function(alternative){

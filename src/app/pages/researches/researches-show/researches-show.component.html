@@ -1,0 +1,6 @@
+
+<div *ngFor="let research of researches">
+  <ul class="list-group">
+    <a class="list-group-item" routerLink="/pages/researches/reply/{{ research.id }}" (click)="replyResearch(research)">{{ research.title }}</a>
+  </ul>
+</div>

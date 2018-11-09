@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ResearcherService } from '../../../services/researcher.service';
+import { Researcher } from '../../../models/researcher';
 
 @Component({
   selector: 'ngx-researchers-show',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResearchersShowComponent implements OnInit {
 
-  constructor() { }
+  researchers: Array<Researcher> = [new Researcher()];
+
+  constructor(private route: ActivatedRoute, private researcherService: ResearcherService) { }
 
   ngOnInit() {
+    this.researcherService.show().subscribe((researchers) => {
+      this.researchers = researchers;
+    });
   }
 
 }

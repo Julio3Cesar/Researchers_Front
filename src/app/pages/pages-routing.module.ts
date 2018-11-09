@@ -6,12 +6,16 @@ import { NotFoundComponent } from './miscellaneous/not-found/not-found.component
 import { ResearchesCreateComponent } from './researches/researches-create/researches-create.component';
 import { ResearchesShowComponent } from './researches/researches-show/researches-show.component';
 import { ResearchesReplyComponent } from './researches/researches-reply/researches-reply.component';
+import { ResearchersShowComponent } from './researchers/researchers-show/researchers-show.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
   {
+    path: 'researchers/show',
+    component: ResearchersShowComponent,
+  }, {
     path: 'researches/reply/:id',
     component: ResearchesReplyComponent,
   }, {
@@ -28,7 +32,7 @@ const routes: Routes = [{
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
-    redirectTo: 'researches/create',
+    redirectTo: 'researches/show',
     pathMatch: 'full',
   }, {
     path: '**',

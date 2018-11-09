@@ -19,16 +19,12 @@ export class ResearchesShowComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      let id = params.params.id;
-      this.researcher.id = id;
+      let id = params.get('id');
+      this.researcher.id = (id == null) ? 0 : id;
     });
     this.researchService.show(this.researcher.id).subscribe((researches) => {
       this.researches = researches;
     });
-  }
-
-  replyResearch(research){
-    this.router.navigate(['researches/reply', research.id])
   }
 
 }

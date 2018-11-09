@@ -2,7 +2,7 @@ import { Question } from './question';
 import { Researcher } from './researcher';
 
 export class Research {
-  id: number;
+  id;
   title: String = "";
   questions: Array<Question> = [new Question()];
   researcher: Researcher = new Researcher();

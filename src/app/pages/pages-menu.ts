@@ -1,6 +1,16 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
+{
+    title: 'Researchers',
+    icon: 'nb-person',
+    children: [
+      {
+        title: 'Show',
+        link: 'researchers/show',
+      },
+    ]
+  },
   {
     title: 'Researches',
     icon: 'nb-compose',
@@ -8,11 +18,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Show',
         link: 'researches/show',
+        home: true,
       },
       {
         title: 'Create',
         link: 'researches/create',
-        home: true,
       },
     ]
   },

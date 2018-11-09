@@ -1,3 +1,5 @@
-<p>
-  researchers-show works!
-</p>
+<div *ngFor="let researcher of researchers">
+  <ul class="list-group">
+    <a class="list-group-item" routerLink="/pages/researches/show/{{ researcher.id }}">{{ researcher.fullName }}</a>
+  </ul>
+</div>

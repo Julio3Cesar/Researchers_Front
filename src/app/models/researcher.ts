@@ -1,5 +1,5 @@
 export class Researcher {
-  id: number;
+  id;
   fullName: String;
   email: String = "";
 }

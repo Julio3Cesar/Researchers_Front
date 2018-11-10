@@ -17,7 +17,7 @@
             <hr/>
           </div>
         </div>
-        <button (click)="saveRecord()" type="button" class="btn btn-primary float-right">Save</button>
+        <button (click)="saveRecord()" type="button" [disabled]="recordIsInvalid" class="btn btn-primary float-right">Save</button>
       </nb-card-body>
     </nb-card>
   </div>

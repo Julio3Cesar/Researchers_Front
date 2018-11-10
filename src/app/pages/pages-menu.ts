@@ -1,5 +1,22 @@
 import { NbMenuItem } from '@nebular/theme';
 
+var authChildren = function(){
+  if(localStorage.getItem("email") == null){
+    return [{
+      title: 'Login',
+      link: '/auth/login',
+    }, {
+      title: 'Register',
+      link: '/auth/register',
+    }];
+  } else {
+    return [{
+      title: 'Register',
+      link: '/auth/register',
+    }];
+  }
+};
+
 export const MENU_ITEMS: NbMenuItem[] = [
 {
     title: 'Researchers',
@@ -29,15 +46,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Auth',
     icon: 'nb-locked',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-    ],
+    children:
+      authChildren(),
   },
 ];
+

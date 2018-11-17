@@ -26,5 +26,4 @@ export class ResearchesShowComponent implements OnInit {
       this.researches = researches;
     });
   }
-
 }

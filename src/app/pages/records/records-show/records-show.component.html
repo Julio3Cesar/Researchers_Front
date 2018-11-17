@@ -1,0 +1,12 @@
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th *ngFor="let question of records[0].research.questions" scope="col">{{ question.question }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records">
+      <td *ngFor="let alternative of record.alternatives">{{ alternative.alternative }}</td>
+    </tr>
+  </tbody>
+</table>

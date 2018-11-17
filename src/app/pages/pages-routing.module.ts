@@ -7,12 +7,20 @@ import { ResearchesCreateComponent } from './researches/researches-create/resear
 import { ResearchesShowComponent } from './researches/researches-show/researches-show.component';
 import { ResearchesReplyComponent } from './researches/researches-reply/researches-reply.component';
 import { ResearchersShowComponent } from './researchers/researchers-show/researchers-show.component';
+import { ResearchesComponent } from './records/researches/researches.component';
+import { RecordsShowComponent } from './records/records-show/records-show.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
   {
+    path: 'records/show/:id',
+    component: RecordsShowComponent,
+  }, {
+    path: 'records/researches',
+    component: ResearchesComponent,
+  }, {
     path: 'researchers/show',
     component: ResearchersShowComponent,
   }, {

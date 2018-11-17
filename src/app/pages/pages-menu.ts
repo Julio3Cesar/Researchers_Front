@@ -17,8 +17,24 @@ var authChildren = function(){
   }
 };
 
+var recordsChildren = function(){
+  if(localStorage.getItem("email") != null){
+    return {
+      title: 'Records',
+      icon: 'ion-filing',
+      children: [
+        {
+          title: 'Show',
+          link: 'records/researches',
+        },
+      ]
+    }
+  }
+  return;
+};
+
 export const MENU_ITEMS: NbMenuItem[] = [
-{
+  {
     title: 'Researchers',
     icon: 'nb-person',
     children: [
@@ -30,7 +46,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Researches',
-    icon: 'nb-compose',
+    icon: 'ion-clipboard',
     children: [
       {
         title: 'Show',
@@ -43,6 +59,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ]
   },
+    recordsChildren(),
   {
     title: 'Auth',
     icon: 'nb-locked',

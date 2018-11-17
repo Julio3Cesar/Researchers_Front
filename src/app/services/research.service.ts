@@ -26,6 +26,10 @@ export class ResearchService {
     return this.http.get<Research>(this.host+"researches/" + id);
   }
 
+  showByEmail(email): Observable<Array<Research>> {
+    return this.http.get<Array<Research>>(this.host+"researches/index/email/" + email);
+  }
+
   private cleanResearch(research: Research){
     let questions = research.questions.filter(function(question){
       if(question.question != "") {

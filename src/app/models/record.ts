@@ -2,6 +2,6 @@ import { Alternative } from './alternative';
 import { Research } from './research';
 
 export class Record {
-  research: Research;
+  research: Research = new Research();
   alternatives: Array<Alternative> = [];
 }

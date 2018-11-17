@@ -5,7 +5,7 @@ import { ResearchService } from '../../../services/research.service';
 import { RecordService } from '../../../services/record.service';
 import { Record } from '../../../models/record';
 import { Alternative } from '../../../models/alternative';
-import {Router} from "@angular/router"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'ngx-researches-reply',

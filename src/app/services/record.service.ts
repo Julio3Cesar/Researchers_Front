@@ -13,7 +13,10 @@ export class RecordService {
   constructor(private http: HttpClient) { }
 
   create(record: Record): Observable<any> {
-    console.log(record);
     return this.http.post<void>(this.host+"records", record);
+  }
+
+  getRecords(researchId): Observable<Array<Record>> {
+    return this.http.get<Array<Record>>(this.host+"records/show/" + researchId);
   }
 }

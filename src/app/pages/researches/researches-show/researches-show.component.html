@@ -1,5 +1,9 @@
-<div *ngFor="let research of researches">
-  <ul class="list-group">
-    <a class="list-group-item" routerLink="/pages/researches/reply/{{ research.id }}">{{ research.title }}</a>
-  </ul>
-</div>
+<nb-card>
+  <nb-card-body>
+    <div *ngFor="let research of researches">
+      <ul class="list-group">
+        <a class="list-group-item" routerLink="/pages/researches/reply/{{ research.id }}">{{ research.title }}</a>
+      </ul>
+    </div>
+  </nb-card-body>
+</nb-card>

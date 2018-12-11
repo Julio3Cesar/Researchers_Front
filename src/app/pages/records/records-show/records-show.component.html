@@ -1,12 +1,20 @@
-<table class="table table-sm">
-  <thead>
-    <tr>
-      <th *ngFor="let question of records[0].research.questions" scope="col">{{ question.question }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let record of records">
-      <td *ngFor="let alternative of record.alternatives">{{ alternative.alternative }}</td>
-    </tr>
-  </tbody>
-</table>
+{{ frequencyOnRecord(9) }}
+<nb-card>
+  <nb-card-header>{{ research.title }}</nb-card-header>
+  <nb-card-body>
+    <table *ngFor="let question of research.questions" class="table table-sm">
+      <thead>
+        <tr >
+          <th scope="col">{{ question.question }}</th>
+          <th *ngFor="let alternative of question.alternatives" scope="col">{{ alternative.alternative }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th></th>
+          <td *ngFor="let alternative of question.alternatives" scope="col">{{ frequencyOnRecord(alternative.id) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>

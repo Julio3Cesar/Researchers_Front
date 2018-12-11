@@ -29,8 +29,18 @@ var recordsChildren = function(){
         },
       ]
     }
+  } else {
+    return {
+      title: 'Records',
+      icon: 'ion-filing',
+      children: [
+        {
+          title: 'Show',
+          link: '/auth/login',
+        },
+      ]
+    };
   }
-  return;
 };
 
 export const MENU_ITEMS: NbMenuItem[] = [

@@ -1,5 +1,27 @@
 import { NbMenuItem } from '@nebular/theme';
 
+var toManageChildren = function(){
+  if(localStorage.getItem("email") != null){
+    return [{
+        title: 'My researches',
+        link: 'to-manage/my-researches',
+      },
+      {
+        title: 'My account',
+        link: 'to-manage/my-account',
+      },
+      {
+        title: 'Delete my account',
+        link: 'to-manage/delete-my-account',
+      }];
+  } else {
+    return [{
+      title: 'Login',
+      link: '/auth/login',
+    }];
+  }
+};
+
 var authChildren = function(){
   if(localStorage.getItem("email") == null){
     return [{
@@ -17,7 +39,7 @@ var authChildren = function(){
   }
 };
 
-var recordsChildren = function(){
+var records = function(){
   if(localStorage.getItem("email") != null){
     return {
       title: 'Records',
@@ -69,7 +91,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ]
   },
-    recordsChildren(),
+    records(),
+  {
+    title: 'To Manage',
+    icon: 'nb-home',
+    children:
+      toManageChildren(),
+  },
   {
     title: 'Auth',
     icon: 'nb-locked',

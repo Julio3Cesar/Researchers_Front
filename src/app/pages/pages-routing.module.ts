@@ -9,12 +9,24 @@ import { ResearchesReplyComponent } from './researches/researches-reply/research
 import { ResearchersShowComponent } from './researchers/researchers-show/researchers-show.component';
 import { ResearchesComponent } from './records/researches/researches.component';
 import { RecordsShowComponent } from './records/records-show/records-show.component';
+import { MyResearchesComponent } from './to-manage/my-researches/my-researches.component';
+import { MyAccountComponent } from './to-manage/my-account/my-account.component';
+import { DeleteMyAccountComponent } from './to-manage/delete-my-account/delete-my-account.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
   {
+    path: 'to-manage/my-researches',
+    component: MyResearchesComponent,
+  }, {
+    path: 'to-manage/my-account',
+    component: MyAccountComponent,
+  }, {
+    path: 'to-manage/delete-my-account',
+    component: DeleteMyAccountComponent,
+  }, {
     path: 'records/show/:id',
     component: RecordsShowComponent,
   }, {
@@ -33,7 +45,7 @@ const routes: Routes = [{
     path: 'researches/show/:id',
     component: ResearchesShowComponent,
   }, {
-    path: 'researches/create',
+    path: 'researches/create/:id',
     component: ResearchesCreateComponent,
   }, {
     path: 'miscellaneous',

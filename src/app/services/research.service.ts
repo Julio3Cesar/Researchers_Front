@@ -14,7 +14,6 @@ export class ResearchService {
 
   create(research: Research): Observable<Research> {
     research = this.cleanResearch(research);
-    console.log(research);
     return this.http.post<Research>(this.host+"researches", research);
   }
 
@@ -24,6 +23,10 @@ export class ResearchService {
 
   getReply(id: number){
     return this.http.get<Research>(this.host+"researches/" + id);
+  }
+
+  deleteResearch(id: number){
+    return this.http.post<any>(this.host+"researches/delete/" + id, "asd");
   }
 
   showByEmail(email): Observable<Array<Research>> {

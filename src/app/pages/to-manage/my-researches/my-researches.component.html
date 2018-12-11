@@ -1,0 +1,8 @@
+<div *ngFor="let research of researches">
+  <ul class="list-group">
+    <li  class="list-group-item" >{{ research.title }}
+      <i class="nb-trash" (click)="deleteResearch(research.id)"></i>
+      <i class="nb-edit" routerLink="/pages/researches/create/{{ research.id }}"></i>
+    </li>
+  </ul>
+</div>

@@ -11,6 +11,9 @@ import { ResearchesReplyComponent } from './researches/researches-reply/research
 import { ResearchersShowComponent } from './researchers/researchers-show/researchers-show.component';
 import { RecordsShowComponent } from './records/records-show/records-show.component';
 import { ResearchesComponent } from './records/researches/researches.component';
+import { MyResearchesComponent } from './to-manage/my-researches/my-researches.component';
+import { DeleteMyAccountComponent } from './to-manage/delete-my-account/delete-my-account.component';
+import { MyAccountComponent } from './to-manage/my-account/my-account.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -31,6 +34,9 @@ const PAGES_COMPONENTS = [
     ResearchersShowComponent,
     RecordsShowComponent,
     ResearchesComponent,
+    MyResearchesComponent,
+    DeleteMyAccountComponent,
+    MyAccountComponent,
   ],
 })
 export class PagesModule {

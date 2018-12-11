@@ -12,7 +12,7 @@ import { ResearchService } from '../../../services/research.service';
 })
 export class RecordsShowComponent implements OnInit {
 
-  records: Array<Record> = new Array<Record>;
+  records: Array<Record> = new Array<Record>();
   research: Research = new Research();
 
   constructor(private route: ActivatedRoute, private recordService: RecordService, private researchService: ResearchService) { }

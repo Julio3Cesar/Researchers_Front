@@ -15,6 +15,7 @@
     "IE 11"
   ],
   "scripts": {
+    "start": "ng serve --proxy-config proxy.config.js",
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
     "start": "ng serve",

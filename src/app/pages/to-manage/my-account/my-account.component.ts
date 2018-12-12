@@ -17,7 +17,6 @@ export class MyAccountComponent implements OnInit {
   ngOnInit() {
     let email = localStorage.getItem('email');
     this.researcherService.getByEmail(email).subscribe((researcher) => {
-      console.log(researcher);
       this.researcher = researcher;
     });
   }

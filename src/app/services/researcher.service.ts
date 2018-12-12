@@ -19,4 +19,12 @@ export class ResearcherService {
   deleteByEmail(email: string) {
     return this.http.post<any>(this.host+"researchers/delete/" + email,"body");
   }
+
+  getByEmail(email: string) {
+    return this.http.get<any>(this.host+"researchers/byemail/" + email);
+  }
+
+  update(researcher) {
+    return this.http.post<any>(this.host+"researchers/sign-up/", researcher);
+  }
 }

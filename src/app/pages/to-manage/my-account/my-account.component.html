@@ -1,3 +1,19 @@
-<p>
-  my-account works!
-</p>
+<nb-card class="row">
+  <nb-card-header>
+    <h1 id="title" class="title">Edit my account</h1>
+  </nb-card-header>
+
+  <nb-card-body>
+    <div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Full Name</label>
+        <input type="text" class="form-control" placeholder="Full name" [(ngModel)]="researcher.fullName">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"[(ngModel)]="researcher.email">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="edit()">Save</button>
+    </div>
+  </nb-card-body>
+</nb-card>

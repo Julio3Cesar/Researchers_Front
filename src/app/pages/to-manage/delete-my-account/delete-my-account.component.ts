@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResearcherService } from '../../../services/researcher.service';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'ngx-delete-my-account',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteMyAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private researcherService: ResearcherService) { }
 
   ngOnInit() {
   }
 
+  deleteAccount(){
+    let email = localStorage.getItem("email");
+    this.researcherService.deleteByEmail(email).subscribe(() => {
+      alert("Account deleted successfully!");
+      localStorage.clear();
+      this.router.navigate(['/']);
+      window.location.reload();
+    });
+  }
 }

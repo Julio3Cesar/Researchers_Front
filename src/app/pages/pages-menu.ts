@@ -87,7 +87,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Create',
-        link: 'researches/create',
+        link: 'researches/create/0',
       },
     ]
   },

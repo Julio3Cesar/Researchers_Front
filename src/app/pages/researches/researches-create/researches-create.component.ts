@@ -20,7 +20,7 @@ export class ResearchesCreateComponent implements OnInit{
   ngOnInit(){
     this.route.paramMap.subscribe(params => {
       let id = params.get('id');
-      if(id != null){
+      if(id != null && +id != 0){
         this.researchService.getReply(+id).subscribe((research) => {
           this.research = research as Research;
         });

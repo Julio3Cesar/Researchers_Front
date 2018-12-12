@@ -15,4 +15,8 @@ export class ResearcherService {
   show(): Observable<Array<Researcher>> {
     return this.http.get<Array<Researcher>>(this.host+"researchers/");
   }
+
+  deleteByEmail(email: string) {
+    return this.http.post<any>(this.host+"researchers/delete/" + email,"body");
+  }
 }

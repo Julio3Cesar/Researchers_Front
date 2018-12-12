@@ -22,7 +22,8 @@ export class MyResearchesComponent implements OnInit {
 
   deleteResearch(id: number){
     this.researchService.deleteResearch(id).subscribe((data)=>{
-         console.log("success");
+      alert("Success!");
+      window.location.reload();
     });;
   }
 }
